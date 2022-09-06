@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name, portrait, city, country, tagline, price } = data;
+    const { name, portrait, city, country, tagline, price, id } = data;
 
     /*const picture = `assets/photographers/${portrait}`;
     const location = `${city}, ${country}`;
@@ -34,13 +34,13 @@ function photographerFactory(data) {
         article.appendChild(domTagline);
         article.appendChild(domPrice);*/
 
-        article.innerHTML = `<img src="assets/photographers/${portrait}" alt="image de profil de ${name}">
-        <h2>${name}</h2>
-        <p class="location">${city}, ${country}</p>
-        <p class="tagline">${tagline}</p>
-        <p class="price">${price}€/jour</p>`;
+        article.innerHTML = `<a href = "photographer.html?id=${id}"><img src="assets/photographers/${portrait}" alt="image de profil de ${name}"></a>
+        <h2><a href = "photographer.html?id=${id}">${name}</a></h2>
+        <p class = "location">${city}, ${country}</p>
+        <p class = "tagline">${tagline}</p>
+        <p class = "price">${price}€/jour</p>`;
 
         return (article);
     }
-    return { name, portrait, city, country, tagline, price, getUserCardDOM };
+    return { name, portrait, city, country, tagline, price, id, getUserCardDOM };
 };
