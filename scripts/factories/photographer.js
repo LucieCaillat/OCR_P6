@@ -16,7 +16,7 @@ function photographerFactory(data) {
     function getPhotographerHeaderDOM() {
         const photographHeader = document.createElement( 'div' );
         photographHeader.classList.add("photograph-header"); 
-
+        
 
         photographHeader.innerHTML = 
         `<div>

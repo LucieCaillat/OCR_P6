@@ -26,17 +26,28 @@ async function getPhotosData(){
 };
 
 
-async function displayData(photographer) {
-  const photographersSection = document.querySelector("#main");
+async function displayPhotographerData(photographer) {
+  const main = document.querySelector("#main");
   const photographerModel = photographerFactory(photographer);
-  const userCardDOM = photographerModel.getPhotographerHeaderDOM();
-  photographersSection.appendChild(userCardDOM);
+  const photographerHeaderDOM = photographerModel.getPhotographerHeaderDOM();
+  main.replaceChild(photographerHeaderDOM, document.querySelector(".photograph-header-location"));
+};
+
+async function displayPhotosData(photos) {
+  const photoGallery = document.querySelector(".photo-gallery");
+  photos.forEach((photo) => {
+    const photoModel = mediaFactory(photo);
+    const photoCardDOM = photoModel.getImageCardDOM();
+    photoGallery.appendChild(photoCardDOM);
+  });
 };
 
 async function init() {
   // Recovers data from photographers
   const photographer = await getPhotographerData();
-  displayData(photographer);
+  displayPhotographerData(photographer);
+  const photos = await getPhotosData();
+  displayPhotosData(photos);
 };
 
 init();

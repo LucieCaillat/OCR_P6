@@ -11,9 +11,6 @@
     margin: 0 100px;
     padding: 50px;
 }
-.photograph-header__text {
-    margin-left: ;
-}
 
 .photograph-header h1{
     font-size: 64px;
@@ -58,6 +55,23 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/*photo-gallery*/
+.photo-gallery{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 100px;    
+}
+.photo-gallery article{
+    margin: 0 10px;
+    width: 350px;
+}
+.photo-gallery img{
+    width: 350px;
+    height: 300px;    
+    object-fit: cover;
 }
 
 .modal {
@@ -113,3 +127,5 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+
