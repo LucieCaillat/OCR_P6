@@ -3,9 +3,48 @@
 }
 
 .photograph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    padding: 50px;
+}
+.photograph-header__text {
+    margin-left: ;
+}
+
+.photograph-header h1{
+    font-size: 64px;
+    color: #D3573C;
+    margin: 0px;
+}
+.photograph-header .location{
+    font-size: 24px;
+    color: #901C1C;
+    margin: 0;
+}
+
+.photograph-header .tagline{
+    font-size: 18px;
+    color: #525252;
+    margin-top: 19px;
+}
+
+.fix-box {
+    width: 376px;
+    position: fixed;
+    right: 36px;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    background-color: #DB8876;
+    font-weight: 500;
+    font-size: 24px;
+    
 }
 
 .contact_button {
