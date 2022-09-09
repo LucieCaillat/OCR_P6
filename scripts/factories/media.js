@@ -1,4 +1,4 @@
-function mediaFactory(data) {
+function picturesFactory(data) {
   const { title, image, photographerId, likes } = data;
 
   function getImageCardDOM() {
@@ -16,4 +16,24 @@ function mediaFactory(data) {
 
 
   return { title, image, photographerId, likes, getImageCardDOM };
+};
+
+function moviesFactory(data) {
+  const { title, video, photographerId, likes } = data;
+
+  function getVideoCardDOM() {
+      const article = document.createElement( 'article' );
+
+      article.innerHTML = 
+      `<video src="assets/${photographerId}/${video}" controls></video>
+      <div>
+        <h2>${title}</h2>
+        <p class = "like">${likes}</p>
+      </div>`;
+
+      return (article);
+  }
+
+
+  return { title, video, photographerId, likes, getVideoCardDOM };
 };

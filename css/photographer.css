@@ -68,7 +68,7 @@
     margin: 0 10px;
     width: 350px;
 }
-.photo-gallery img{
+.photo-gallery img, .photo-gallery video{
     width: 350px;
     height: 300px;    
     object-fit: cover;

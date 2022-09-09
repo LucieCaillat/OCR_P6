@@ -36,9 +36,17 @@ async function displayPhotographerData(photographer) {
 async function displayPhotosData(photos) {
   const photoGallery = document.querySelector(".photo-gallery");
   photos.forEach((photo) => {
-    const photoModel = mediaFactory(photo);
-    const photoCardDOM = photoModel.getImageCardDOM();
-    photoGallery.appendChild(photoCardDOM);
+    if (photo.video === undefined ){
+      const photoModel = new MediaFactory(photo, "picture");
+      const photoCardDOM = photoModel.getImageCardDOM(); 
+      photoGallery.appendChild(photoCardDOM);
+    }else{
+      const photoModel = new MediaFactory(photo, "movie");
+      const photoCardDOM = photoModel.getVideoCardDOM(); 
+      photoGallery.appendChild(photoCardDOM);
+    }
+    
+    
   });
 };
 
