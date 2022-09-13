@@ -1,9 +1,9 @@
 class MediaFactory {
   constructor(data, type){
     if(type === 'picture'){
-      return picturesFactory(data)
+      return picturesTemplate(data)
     }else if (type === 'movie'){
-      return moviesFactory(data)
+      return moviesTemplate(data)
     }else{
       throw 'Unknown format type'
     }

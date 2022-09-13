@@ -1,4 +1,13 @@
-function picturesFactory(data) {
+function subtitleTemplate(title, likes) {
+  return ` 
+  <div class = "subtitle">
+    <h2>${title}</h2>
+    <p class = "like">${likes} <i class="fa-solid fa-heart"></i></p>
+  </div>`;
+}
+
+
+function picturesTemplate(data) {
   const { title, image, photographerId, likes } = data;
 
   function getImageCardDOM() {
@@ -6,19 +15,16 @@ function picturesFactory(data) {
 
       article.innerHTML = 
       `<img src="assets/${photographerId}/${image}" alt="photo ${title}">
-      <div>
-        <h2>${title}</h2>
-        <p class = "like">${likes}</p>
-      </div>`;
+     ${subtitleTemplate(title, likes)}`;
 
       return (article);
   }
 
-
   return { title, image, photographerId, likes, getImageCardDOM };
 };
 
-function moviesFactory(data) {
+
+function moviesTemplate(data) {
   const { title, video, photographerId, likes } = data;
 
   function getVideoCardDOM() {
@@ -26,14 +32,10 @@ function moviesFactory(data) {
 
       article.innerHTML = 
       `<video src="assets/${photographerId}/${video}" controls></video>
-      <div>
-        <h2>${title}</h2>
-        <p class = "like">${likes}</p>
-      </div>`;
+      ${subtitleTemplate(title, likes)}`;
 
       return (article);
   }
-
 
   return { title, video, photographerId, likes, getVideoCardDOM };
 };
