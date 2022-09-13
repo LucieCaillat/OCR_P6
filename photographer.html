@@ -12,9 +12,20 @@
     <header>
       <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
-    <main id="main">
+    <main id="main">      
       <div class = "photograph-header-location"></div>
-      <p>Trier par</p>      
+
+      <div class="filter">
+        <p>Trier par</p>
+        <button>Popularité <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="filter_modal">
+          <p id="popularity">Popularité<i class="fa-solid fa-chevron-up"></i></p>
+          <hr>
+          <p id="date">Date</p>
+          <hr>
+          <p id="title">Titre</p>
+        </div>
+      </div>            
 
       <div class="photo-gallery"></div>
     </main>
@@ -40,7 +51,7 @@
     <script src="scripts/templates/PhotographerTemplates.js"></script>
     <script src="scripts/templates/MediaTemplates.js"></script>
 
-    
+
     <script src="/scripts/pages/PhotographerPage.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

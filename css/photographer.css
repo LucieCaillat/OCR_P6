@@ -56,7 +56,43 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
+/*Filter*/
+.filter {
+    display: flex;
+    margin: 20px 100px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.filter button{
+    height: 58px;
+    padding: 10px;
+    background: #911C1C;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 25px;
+    border: none;
+    
+}
+.filter i {
+    margin-left: 10px;
+}
+.filter_modal {  
+    display: none;
+    position: absolute; 
+    left: 190px;  
+    padding: 0 10px;
+    background: #911C1C;
+    border-radius: 5px;    
+    color: #FFFFFF; 
+    font-size: 18px;   
+}
+.filter_modal hr{
+    color: #FFFFFF;
+}
+.filter_modal p{
+    margin: 20px 10px;    
+}
 /*photo-gallery*/
 .photo-gallery {
     display: flex;
@@ -67,7 +103,6 @@
 .photo-gallery article {
     margin: 15px 10px;
     width: 350px;
-
 }
 .photo-gallery img, .photo-gallery video {
     width: 350px;
