@@ -20,7 +20,7 @@ function sortFunction(datas, typeOfSort) {
   if (typeOfSort === "Popularité") {
     return datas.sort((a, b) => b.likes - a.likes)
   } if (typeOfSort === "Date") {
-    return datas.sort((a, b) => b.date < a.date) 
+    return datas.sort((a, b) => b.date > a.date) 
   } if (typeOfSort === "Titre") {
     return datas.sort((a, b) => b.title < a.title)
   } else{
@@ -28,22 +28,21 @@ function sortFunction(datas, typeOfSort) {
   }
 }
 
-async function filterPhotos(typeOfSort) {
+function filterPortfolio(typeOfSort) {
   photoGallery.innerHTML = "";
-  const datas = await getPhotosData();
-  const photos = sortFunction(datas, typeOfSort);
-  console.log(photos);
-  displayPhotosData(photos);
+  const filterPortfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
+  console.log(filterPortfolio);
+  displayPortfolio(filterPortfolio);
   filterButton.innerHTML = `${typeOfSort}<i class="fa-solid fa-chevron-down"></i>`;
   filterModal.style.display = "none";
 }
 
 filterPopularity.addEventListener('click', function(event){
-  filterPhotos("Popularité")
+  filterPortfolio("Popularité")
 } );
 filterDate.addEventListener('click', function(event){
-  filterPhotos("Date")
+  filterPortfolio("Date")
 });
 filterTitle.addEventListener('click', function(event){
-  filterPhotos("Titre")
+  filterPortfolio("Titre")
 } );

@@ -1,14 +1,3 @@
-    async function getPhotographers() {
-        const photographers = fetch("data/photographers.json")
-            .then(function(res) {
-                return res.json();
-            })
-            .then(function(value) {
-                return value; 
-            });
-        return photographers
-    }
-
     function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
@@ -21,8 +10,8 @@
 
     async function init() {
         // Recovers data from photographers
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
+        await getData();
+        displayData(FISHEYE.photographers);
     };
     
     init();

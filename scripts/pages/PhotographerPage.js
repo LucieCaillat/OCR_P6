@@ -1,39 +1,24 @@
 const photographerId = parseInt(new URL(document.location).searchParams.get(`id`)); 
 
-async function getData() {
-  return fetch("data/photographers.json")
-    .then(function(res) {
-        return res.json();
-    })
-    .then(function(value) {
-        return value; 
-    });  
-}
-async function getPhotographerData(){
-  const data = await getData();
-  const photographersDataArray = data.photographers;
-  const photographerDataObject = photographersDataArray.filter(phographe => phographe.id === photographerId)[0];
-  
-  return photographerDataObject;
+function getPhotographer(photographers){
+  const photographer = photographers.filter(phographer => phographer.id === photographerId)[0];  
+  return photographer;
 };
 
-async function getPhotosData(){
-  const data = await getData();
-  const mediaData = data.media;
-  const photosDataArray = mediaData.filter(photo => photo.photographerId === photographerId);
-  
-  return photosDataArray;
+function getPortfolio(media){
+  const portfolio = media.filter(photo => photo.photographerId === photographerId);  
+  return portfolio;
 };
 
 
-async function displayPhotographerData(photographer) {
+function displayPhotographer(photographer) {
   const main = document.querySelector("#main");
   const photographerModel = photographerFactory(photographer);
   const photographerHeaderDOM = photographerModel.getPhotographerHeaderDOM();
   main.replaceChild(photographerHeaderDOM, document.querySelector(".photograph-header-location"));
 };
 
-async function displayPhotosData(photos) {
+function displayPortfolio(photos) {
   const photoGallery = document.querySelector(".photo-gallery");
   photos.forEach((photo) => {
     if (photo.video === undefined ){
@@ -51,11 +36,12 @@ async function displayPhotosData(photos) {
 };
 
 async function init() {
-  // Recovers data from photographers
-  const photographer = await getPhotographerData();
-  displayPhotographerData(photographer);
-  const photos = await getPhotosData();
-  displayPhotosData(photos);
+  await getData()
+  const photographer = getPhotographer(FISHEYE.photographers);
+  displayPhotographer(photographer);
+  //the portfolio is sorted by popularity by default
+  FISHEYE.portfolio = getPortfolio(FISHEYE.media).sort((a, b) => b.likes - a.likes);   
+  displayPortfolio(FISHEYE.portfolio);
 };
 
 init();
