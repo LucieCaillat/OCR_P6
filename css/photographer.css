@@ -72,6 +72,7 @@
     color: #FFFFFF;
     margin-left: 25px;
     border: none;
+    cursor: pointer;
     
 }
 .filter i {
@@ -91,7 +92,8 @@
     color: #FFFFFF;
 }
 .filter_modal p{
-    margin: 20px 10px;    
+    margin: 20px 10px;
+    cursor: pointer;    
 }
 /*photo-gallery*/
 .photo-gallery {
