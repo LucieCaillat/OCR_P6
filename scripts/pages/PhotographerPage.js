@@ -10,7 +10,6 @@ function getPortfolio(media){
   return portfolio;
 };
 
-
 function displayPhotographer(photographer) {
   const main = document.querySelector("#main");
   const photographerModel = photographerFactory(photographer);
@@ -18,19 +17,20 @@ function displayPhotographer(photographer) {
   main.replaceChild(photographerHeaderDOM, document.querySelector(".photograph-header-location"));
 };
 
-function displayPortfolio(photos) {
+function displayPortfolio(media) {
   const photoGallery = document.querySelector(".photo-gallery");
-  photos.forEach((photo) => {
-    if (photo.video === undefined ){
-      const photoModel = new MediaFactory(photo, "picture");
+  media.forEach((medium) => {
+    if (medium.video === undefined ){
+      const photoModel = new MediaFactory(medium, "picture");
       const photoCardDOM = photoModel.getImageCardDOM(); 
       photoGallery.appendChild(photoCardDOM);
     }else{
-      const photoModel = new MediaFactory(photo, "movie");
-      const photoCardDOM = photoModel.getVideoCardDOM(); 
-      photoGallery.appendChild(photoCardDOM);
+      const videoModel = new MediaFactory(medium, "movie");
+      const videoCardDOM = videoModel.getVideoCardDOM(); 
+      photoGallery.appendChild(videoCardDOM);
     }
-    
+    /// indicates if the media is liked
+    displayMediumLike(medium.id, medium.likes, medium.liked)
     
   });
 };
@@ -42,6 +42,8 @@ async function init() {
   //the portfolio is sorted by popularity by default
   FISHEYE.portfolio = getPortfolio(FISHEYE.media).sort((a, b) => b.likes - a.likes);   
   displayPortfolio(FISHEYE.portfolio);
+  displayTotalLikes();
+  likes();
 };
 
 init();

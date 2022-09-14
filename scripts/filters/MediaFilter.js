@@ -35,6 +35,7 @@ function filterPortfolio(typeOfSort) {
   displayPortfolio(filterPortfolio);
   filterButton.innerHTML = `${typeOfSort}<i class="fa-solid fa-chevron-down"></i>`;
   filterModal.style.display = "none";
+  likes()
 }
 
 filterPopularity.addEventListener('click', function(event){

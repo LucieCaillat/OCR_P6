@@ -2,7 +2,7 @@ function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
 
 
-// Affichage des donnés de chaque photographe sur la page index
+// Display the data of each photographer on the index page
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
 
@@ -15,7 +15,7 @@ function photographerFactory(data) {
         return (article);
     }
 
-// Affichage des donnés du photographe sur leur page personnel 
+// Display the photographer's data on their personal page 
     function getPhotographerHeaderDOM() {
         const photographHeader = document.createElement( 'div' );
         photographHeader.classList.add("photograph-header"); 
@@ -30,7 +30,7 @@ function photographerFactory(data) {
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         <img src="assets/photographers/${portrait}" alt="image de profil de ${name}">
         <div class = "fix-box">
-            <p>nbr of like <i class="fa-solid fa-heart"></i></p>
+            <p class = "total_likes"> <i class="fa-solid fa-heart"></i></p>
             <p class = "price">${price}€/jour</p>
         </div>`;
 

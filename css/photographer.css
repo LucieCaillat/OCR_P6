@@ -114,16 +114,21 @@
 .photo-gallery .subtitle {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
+    align-items: flex-start;    
     color: #911C1C;
 }
 .photo-gallery h2, .photo-gallery p {
-    margin: 0;    
+    margin: 0;
+    font-size: 24px;    
 }
 .photo-gallery .like{
     font-weight: 500;
-    white-space: nowrap;
+    white-space: nowrap;    
+    transition: all 150ms;
+    cursor: pointer;
+}
+.photo-gallery .like:hover{
+    transform: scale(1.05);
 }
 
 /*Modal*/
