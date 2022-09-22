@@ -29,7 +29,7 @@
 
       <div class="photo-gallery"></div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -44,6 +44,15 @@
 				</form>
 			</div>
 		</div>
+    <div id="lightbox_modal" aria-hidden="true">
+      <i class="fa-solid fa-chevron-left"></i>
+      <div class="lightbox__medium">      
+      </div>      
+      <i class="fa-solid fa-chevron-right"></i>
+      <i class="fa-sharp fa-solid fa-xmark"></i>
+
+    </div>
+
     <!--API-->
     <script src="scripts/api/Api.js"></script>
     <!--Factories-->
@@ -60,5 +69,7 @@
     <script src="scripts/filters/MediaFilter.js"></script>
     <!--Likes-->
     <script src="scripts/likes/Likes.js"></script>
+    <!--Lightbox-->
+    <script src="scripts/lightbox/Lightbox.js"></script>
   </body>
 </html>

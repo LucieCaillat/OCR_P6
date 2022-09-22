@@ -44,6 +44,7 @@ async function init() {
   displayPortfolio(FISHEYE.portfolio);
   displayTotalLikes();
   likes();
+  lightbox()
 };
 
 init();

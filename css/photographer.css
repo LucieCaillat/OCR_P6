@@ -96,6 +96,9 @@
     cursor: pointer;    
 }
 /*photo-gallery*/
+article{
+    cursor: pointer;
+}
 .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -185,4 +188,42 @@ form input {
     border-radius: 5px;
 }
 
+/*Light Box*/
 
+#lightbox_modal{
+display: none;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 0;
+height: 100vh;
+width: 100vw;
+background-color: white;
+z-index: 2;
+}
+#lightbox_modal div img{
+    max-width: 1050px;
+    max-height: 900px;
+}
+#lightbox_modal h2{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    margin-top: 12px;
+}
+#lightbox_modal i{
+    font-size: 48px;
+    color: #911C1C;
+    cursor: pointer;
+}
+#lightbox_modal .fa-xmark{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 126px;
+    margin-top: 37px;
+}
+.fa-chevron-left, .fa-chevron-right{
+    margin: 30px;
+}

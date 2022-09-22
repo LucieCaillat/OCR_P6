@@ -12,9 +12,10 @@ function picturesTemplate(data) {
 
   function getImageCardDOM() {
       const article = document.createElement( 'article' );
+      article.id = `${id}`
 
       article.innerHTML = 
-      `<img src="assets/${photographerId}/${image}" alt="photo ${title}">
+      `<img src="assets/${photographerId}/${image}" alt="${title}">
      ${subtitleTemplate(title, likes, id)}`;
 
       return (article);
@@ -29,6 +30,7 @@ function moviesTemplate(data) {
 
   function getVideoCardDOM() {
       const article = document.createElement( 'article' );
+      article.id = `${id}`
 
       article.innerHTML = 
       `<video src="assets/${photographerId}/${video}" controls></video>
