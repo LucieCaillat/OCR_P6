@@ -98,12 +98,11 @@
 /*photo-gallery*/
 .photo-gallery {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 100px;    
 }
 .photo-gallery article {
-    margin: 15px 10px;
+    margin: 15px 5.5vw;
     width: 350px;
 }
 .photo-gallery img, .photo-gallery video {
