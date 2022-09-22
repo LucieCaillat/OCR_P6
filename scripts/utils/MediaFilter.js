@@ -30,12 +30,13 @@ function sortFunction(datas, typeOfSort) {
 
 function filterPortfolio(typeOfSort) {
   photoGallery.innerHTML = "";
-  const filterPortfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
-  console.log(filterPortfolio);
-  displayPortfolio(filterPortfolio);
+  FISHEYE.portfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
+  console.log(FISHEYE.portfolio);
+  displayPortfolio(FISHEYE.portfolio);
   filterButton.innerHTML = `${typeOfSort}<i class="fa-solid fa-chevron-down"></i>`;
   filterModal.style.display = "none";
   likes()
+  lightboxLink()
 }
 
 filterPopularity.addEventListener('click', function(event){

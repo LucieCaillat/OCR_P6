@@ -20,18 +20,10 @@ function displayPhotographer(photographer) {
 function displayPortfolio(media) {
   const photoGallery = document.querySelector(".photo-gallery");
   media.forEach((medium) => {
-    if (medium.video === undefined ){
-      const photoModel = new MediaFactory(medium, "picture");
-      const photoCardDOM = photoModel.getImageCardDOM(); 
-      photoGallery.appendChild(photoCardDOM);
-    }else{
-      const videoModel = new MediaFactory(medium, "movie");
-      const videoCardDOM = videoModel.getVideoCardDOM(); 
-      photoGallery.appendChild(videoCardDOM);
-    }
+    const mediumCardDOM = mediumTemplate(medium);
+    photoGallery.appendChild(mediumCardDOM);
     /// indicates if the media is liked
-    displayMediumLike(medium.id, medium.likes, medium.liked)
-    
+    displayMediumLike(medium.id, medium.likes, medium.liked)    
   });
 };
 

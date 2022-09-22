@@ -1,43 +1,20 @@
-function subtitleTemplate(title, likes, id) {
-  return ` 
-  <div class = "subtitle">
-    <h2>${title}</h2>
-    <p id = "like_${id}" class = "like">${likes} <i class="fa-solid fa-heart"></i></p>
-  </div>`;
+function displayVideo(medium){
+return `<video src="assets/${medium.photographerId}/${medium.video}" controls></video>`
 }
 
+function displayPicture(medium){
+return `<img src="assets/${medium.photographerId}/${medium.image}" alt="${medium.title}">`
+}
 
-function picturesTemplate(data) {
-  const { title, image, photographerId, likes, id} = data;
-
-  function getImageCardDOM() {
-      const article = document.createElement( 'article' );
-      article.id = `${id}`
-
-      article.innerHTML = 
-      `<img src="assets/${photographerId}/${image}" alt="${title}">
-     ${subtitleTemplate(title, likes, id)}`;
-
-      return (article);
-  }
-
-  return { title, image, photographerId, likes, id, getImageCardDOM };
-};
-
-
-function moviesTemplate(data) {
-  const { title, video, photographerId, likes, id} = data;
-
-  function getVideoCardDOM() {
-      const article = document.createElement( 'article' );
-      article.id = `${id}`
-
-      article.innerHTML = 
-      `<video src="assets/${photographerId}/${video}" controls></video>
-      ${subtitleTemplate(title, likes, id)}`;
-
-      return (article);
-  }
-
-  return { title, video, photographerId, likes, id,getVideoCardDOM };
-};
+function mediumTemplate(medium){
+  const displayMedium = MediaFactory(medium);
+  const article = document.createElement( 'article' );
+  article.id = `${medium.id}`;
+  article.innerHTML =`
+  ${displayMedium}
+    <div class = "subtitle">
+      <h2>${medium.title}</h2>
+      <p id = "like_${medium.id}" class = "like">${medium.likes} <i class="fa-solid fa-heart"></i></p>
+    </div>`;
+  return article
+}
