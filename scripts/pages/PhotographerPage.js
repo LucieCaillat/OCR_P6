@@ -29,14 +29,15 @@ function displayPortfolio(media) {
 
 async function init() {
   await getData()
-  const photographer = getPhotographer(FISHEYE.photographers);
-  displayPhotographer(photographer);
+  FISHEYE.photographer = getPhotographer(FISHEYE.photographers);
+  displayPhotographer(FISHEYE.photographer);
   //the portfolio is sorted by popularity by default
   FISHEYE.portfolio = getPortfolio(FISHEYE.media).sort((a, b) => b.likes - a.likes);   
   displayPortfolio(FISHEYE.portfolio);
   displayTotalLikes();
   likes();
-  lightbox()
+  lightbox();
+  contactForm();
 };
 
 init();

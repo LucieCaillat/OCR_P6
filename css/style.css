@@ -1,4 +1,5 @@
 @import url("photographer.css");
+@import url(utils.css);
 
 body {
     font-family: "DM Sans", sans-serif;
@@ -6,7 +7,7 @@ body {
 }
 
 
-header {
+#main-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

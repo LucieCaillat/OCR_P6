@@ -27,7 +27,7 @@ function photographerFactory(data) {
             <p class = "location">${city}, ${country}</p>
             <p class = "tagline">${tagline}</p>
         </div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="openContactForm()">Contactez-moi</button>
         <img src="assets/photographers/${portrait}" alt="image de profil de ${name}">
         <div class = "fix-box">
             <p class = "total_likes"> <i class="fa-solid fa-heart"></i></p>

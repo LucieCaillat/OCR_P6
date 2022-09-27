@@ -1,16 +1,9 @@
-const lightboxModal = document.querySelector("#lightbox_modal");
-const closeLightboxButton = document.querySelector("#lightbox_modal .fa-xmark");
-const rightButton = document.querySelector("#lightbox_modal .fa-chevron-right");
-const leftButton = document.querySelector("#lightbox_modal .fa-chevron-left");
-
 function openLightbox(){
-  lightboxModal.style.display = "flex";
-  lightboxModal.setAttribute("aria-hidden", "false");
+  displayModal(lightboxModal)
 }
 
 function closeLigthbox(){
-  lightboxModal.style.display = "none"
-  lightboxModal.setAttribute("aria-hidden", "true");
+  closeModal(lightboxModal)
 }
 
 function displayMediumLightBox(medium){
@@ -81,6 +74,10 @@ function lightboxControl(){
     }
     if (lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 37) {
       goToPreviousSlide()
+    }
+    // for Contact Form
+    if (contactModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
+      closeModal(contactModal);
     }
   })
 }

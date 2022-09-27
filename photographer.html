@@ -9,41 +9,52 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo"  alt="Fisheye - Home page"/></a>
-    </header>
-    <main id="main">      
-      <div class = "photograph-header-location"></div>
+    <div id="without-modals" aria-hidden="false">
+      <header id="main-header" aria-label="En-tête de la page" >
+        <a href="index.html"><img src="assets/images/logo.png" class="logo"  alt="Fisheye - Home page"/></a>
+      </header>
+      <main id="main">      
+        <div class = "photograph-header-location"></div>
 
-      <div class="filter">
-        <p>Trier par</p>
-        <button class="filter_button" aria-label="actuellement trié par Popularité - changer de tri">Popularité <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="filter_modal">
-          <button id="popularity" aria-label="Trier par popularité">Popularité <i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
-          <hr>
-          <button id="date" aria-label="Trier par dates">Date</button>
-          <hr>
-          <button id="title" aria-label="Trier par titres">Titre</button>
-        </div>
-      </div>            
+        <div class="filter">
+          <p>Trier par</p>
+          <button class="filter_button" aria-label="actuellement trié par Popularité - changer de tri">Popularité <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="filter_modal">
+            <button id="popularity" aria-label="Trier par popularité">Popularité <i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+            <hr>
+            <button id="date" aria-label="Trier par dates">Date</button>
+            <hr>
+            <button id="title" aria-label="Trier par titres">Titre</button>
+          </div>
+        </div>            
 
-      <div class="photo-gallery"></div>
-    </main>
+        <div class="photo-gallery"></div>
+      </main>
+    </div>
+    
+
     <div id="contact_modal" aria-hidden="true">
 			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+				<header aria-label="En-tête du formulaire">
+          <h2 id="title-contact-modal">Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal(contactModal)" />
         </header>
-				<form>
+				<form method="get">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="first-name">Prénom</label>
+						<input id="first-name" name ="first-name" type="text"/>
+            <label for="name">Nom</label>
+						<input id="name" name ="name" type="text"/>
+            <label for="email">Email</label>
+						<input id="email" name ="email" type="email"/>
+            <label for="message">Votre message</label>
+						<textarea id="message" name ="message"></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
+
     <div id="lightbox_modal" aria-hidden="true">
       <i class="fa-solid fa-chevron-left"></i>
       <div class="lightbox__medium">      
@@ -53,6 +64,8 @@
 
     </div>
 
+    <!--DOM Variables-->
+    <script src="scripts/variables/PhotographerDomVariables.js"></script>
     <!--API-->
     <script src="scripts/api/Api.js"></script>
     <!--Factories-->

@@ -1,12 +1,3 @@
-const filterModal = document.querySelector(".filter_modal");
-const closeFilterModal = document.querySelector(".filter_modal i");
-const filterButton = document.querySelector(".filter_button");
-const filterPopularity = document.querySelector("#popularity");
-const filterDate  =document.querySelector("#date");
-const filterTitle = document.querySelector("#title");
-const photoGallery = document.querySelector(".photo-gallery")
-
-
 filterButton.addEventListener('click', function(){
   filterModal.style.display = "block";
   filterButton.style.display = "none"
