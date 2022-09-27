@@ -11,8 +11,12 @@ function displayMediumLightBox(medium){
   lightboxMedium.innerHTML = "";
   const displayMedium = MediaFactory(medium);
   lightboxMedium.innerHTML = `
-    ${displayMedium}
-    <h2>${medium.title}</h2>
+   <div class="picture-frame"> 
+    <div>
+      ${displayMedium}
+      <h2>${medium.title}</h2>
+    </div>
+  </div>
   `;
 }
 
