@@ -10,20 +10,20 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" class="logo"  alt="Fisheye - Home page"/></a>
     </header>
     <main id="main">      
       <div class = "photograph-header-location"></div>
 
       <div class="filter">
         <p>Trier par</p>
-        <button>Popularité <i class="fa-solid fa-chevron-down"></i></button>
+        <button class="filter_button" aria-label="actuellement trié par Popularité - changer de tri">Popularité <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
         <div class="filter_modal">
-          <p id="popularity">Popularité<i class="fa-solid fa-chevron-up"></i></p>
+          <button id="popularity" aria-label="Trier par popularité">Popularité <i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
           <hr>
-          <p id="date">Date</p>
+          <button id="date" aria-label="Trier par dates">Date</button>
           <hr>
-          <p id="title">Titre</p>
+          <button id="title" aria-label="Trier par titres">Titre</button>
         </div>
       </div>            
 

@@ -1,6 +1,6 @@
 const filterModal = document.querySelector(".filter_modal");
 const closeFilterModal = document.querySelector(".filter_modal i");
-const filterButton = document.querySelector(".filter button");
+const filterButton = document.querySelector(".filter_button");
 const filterPopularity = document.querySelector("#popularity");
 const filterDate  =document.querySelector("#date");
 const filterTitle = document.querySelector("#title");
@@ -9,11 +9,15 @@ const photoGallery = document.querySelector(".photo-gallery")
 
 filterButton.addEventListener('click', function(){
   filterModal.style.display = "block";
+  filterButton.style.display = "none"
+  filterPopularity.focus();
 })
 
 closeFilterModal.addEventListener('click', function(event){
   event.stopPropagation()
   filterModal.style.display = "none";
+  filterButton.style.display = "block";
+  filterButton.focus();
 })
 
 function sortFunction(datas, typeOfSort) {
@@ -33,8 +37,10 @@ function filterPortfolio(typeOfSort) {
   FISHEYE.portfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
   console.log(FISHEYE.portfolio);
   displayPortfolio(FISHEYE.portfolio);
-  filterButton.innerHTML = `${typeOfSort}<i class="fa-solid fa-chevron-down"></i>`;
-  filterModal.style.display = "none";
+  filterButton.innerHTML = `${typeOfSort} <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
+  filterButton.setAttribute("aria-label", `actuellement trié par ${typeOfSort} - changer de tri`);
+  filterButton.style.display = "block"
+  filterModal.style.display = "none";  
   likes()
   lightboxLink()
 }
