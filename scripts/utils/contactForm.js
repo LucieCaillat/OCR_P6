@@ -1,29 +1,32 @@
+/* global DOM, FISHEYE*/
+
 function displayModal(modal) {
 	modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
-    withoutModals.setAttribute("aria-hidden", "true");
-    withoutModals.classList.add("no-scroll");     
+    DOM.withoutModals.setAttribute("aria-hidden", "true");
+    DOM.withoutModals.classList.add("no-scroll");     
 }
 
 function closeModal(modal) {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
-    header.setAttribute("aria-hidden", "false");
-    withoutModals.setAttribute("aria-hidden", "false");
-    withoutModals.classList.remove("no-scroll");  
+    DOM.withoutModals.setAttribute("aria-hidden", "false");
+    DOM.withoutModals.classList.remove("no-scroll");  
 }
 
+/* eslint-disable no-unused-vars */
 function openContactForm() {
-    displayModal(contactModal);
-    firstInput.focus();
+    displayModal(DOM.contactModal);
+    DOM.firstInput.focus();
 }
-let e = 0;
+
+/* eslint-disable no-unused-vars */
 function contactForm (){
-    titleContactModal.innerHTML = `Contactez-moi<br/>${FISHEYE.photographer.name}`;
+    DOM.titleContactModal.innerHTML = `Contactez-moi<br/>${FISHEYE.photographer.name}`;
     
-    form.addEventListener("submit", function (event) {
+    DOM.form.addEventListener("submit", function (event) {
         event.preventDefault();
-        myFormData = new FormData(form);
+        const myFormData = new FormData(DOM.form);
         const name = myFormData.get("name");
         const firstName = myFormData.get("first-name");
         const email = myFormData.get("email");
@@ -33,7 +36,7 @@ function contactForm (){
         console.log(`Adresse email:  ${email}`);
         console.log(`Message : ${message}`);
         console.log("/////////////////////////////////")
-        closeModal(contactModal);
-        form.reset();
+        closeModal(DOM.contactModal);
+        DOM.form.reset();
     })  
 }

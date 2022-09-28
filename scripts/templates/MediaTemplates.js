@@ -1,11 +1,15 @@
+/* global MediaFactory*/
+/* eslint-disable no-unused-vars */ 
 function displayVideo(medium){
 return `<video src="assets/${medium.photographerId}/${medium.video}" controls></video>`
 }
 
+/* eslint-disable no-unused-vars */ 
 function displayPicture(medium){
 return `<img src="assets/${medium.photographerId}/${medium.image}" alt="${medium.title}">`
 }
 
+/* eslint-disable no-unused-vars */ 
 function mediumTemplate(medium){
   const displayMedium = MediaFactory(medium);
   const article = document.createElement( 'article' );

@@ -1,9 +1,11 @@
+/* global displayModal, closeModal, DOM, MediaFactory, FISHEYE*/
+
 function openLightbox(){
-  displayModal(lightboxModal)
+  displayModal(DOM.lightboxModal)
 }
 
 function closeLigthbox(){
-  closeModal(lightboxModal)
+  closeModal(DOM.lightboxModal)
 }
 
 function displayMediumLightBox(medium){
@@ -11,7 +13,7 @@ function displayMediumLightBox(medium){
   lightboxMedium.innerHTML = "";
   const displayMedium = MediaFactory(medium);
   lightboxMedium.innerHTML = `
-   <div class="picture-frame"> 
+    <div class="picture-frame"> 
     <div>
       ${displayMedium}
       <h2>${medium.title}</h2>
@@ -32,7 +34,7 @@ function goToNextSlide(){
     FISHEYE.currentMediaPosition = 0
   }else{
     FISHEYE.currentMediaPosition++
-  };
+  }
   displayMediumLightBox(FISHEYE.portfolio[FISHEYE.currentMediaPosition]);
 }
 
@@ -41,51 +43,52 @@ function goToPreviousSlide(){
     FISHEYE.currentMediaPosition = FISHEYE.portfolio.length - 1;
   }else{
     FISHEYE.currentMediaPosition--;
-  };
+  }
   displayMediumLightBox(FISHEYE.portfolio[FISHEYE.currentMediaPosition]);
 }
 
 function lightboxLink(){
   const articles = document.querySelectorAll(`article`);  
   articles.forEach(article => {
-    article.addEventListener('click', function(event) { 
+    article.addEventListener('click', function() { 
       onClickMedium(article)
     })
   });
 }
 
 function lightboxControl(){
-  closeLightboxButton.addEventListener('click', function(event) { 
+  DOM.closeLightboxButton.addEventListener('click', function() { 
     closeLigthbox();
   });
 
-  rightButton.addEventListener('click', function(event) { 
+  DOM.rightButton.addEventListener('click', function() { 
     goToNextSlide();
   });
 
-  leftButton.addEventListener('click', function(event) { 
+  DOM.leftButton.addEventListener('click', function() { 
     goToPreviousSlide();
   });
 
   document.addEventListener("keydown", function(event){
     const keyCode = event.keyCode
  
-    if (lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
+    if (DOM.lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
       closeLigthbox()
     }
-    if (lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 39) {
+    if (DOM.lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 39) {
       goToNextSlide()
     }
-    if (lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 37) {
+    if (DOM.lightboxModal.getAttribute('aria-hidden') == 'false' && keyCode === 37) {
       goToPreviousSlide()
     }
     // for Contact Form
-    if (contactModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
-      closeModal(contactModal);
+    if (DOM.contactModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
+      closeModal(DOM.contactModal);
     }
   })
 }
 
+/* eslint-disable no-unused-vars */
 function lightbox(){
   lightboxLink();
   lightboxControl();

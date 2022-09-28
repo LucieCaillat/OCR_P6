@@ -1,14 +1,16 @@
-filterButton.addEventListener('click', function(){
-  filterModal.style.display = "block";
-  filterButton.style.display = "none"
-  filterPopularity.focus();
+/* global DOM, FISHEYE, displayPortfolio, likes, lightboxLink*/
+
+DOM.filterButton.addEventListener('click', function(){
+  DOM.filterModal.style.display = "block";
+  DOM.filterButton.style.display = "none"
+  DOM.filterPopularity.focus();
 })
 
-closeFilterModal.addEventListener('click', function(event){
+DOM.closeFilterModal.addEventListener('click', function(event){
   event.stopPropagation()
-  filterModal.style.display = "none";
-  filterButton.style.display = "block";
-  filterButton.focus();
+  DOM.filterModal.style.display = "none";
+  DOM.filterButton.style.display = "block";
+  DOM.filterButton.focus();
 })
 
 function sortFunction(datas, typeOfSort) {
@@ -24,24 +26,24 @@ function sortFunction(datas, typeOfSort) {
 }
 
 function filterPortfolio(typeOfSort) {
-  photoGallery.innerHTML = "";
+  DOM.photoGallery.innerHTML = "";
   FISHEYE.portfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
   console.log(FISHEYE.portfolio);
   displayPortfolio(FISHEYE.portfolio);
-  filterButton.innerHTML = `${typeOfSort} <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
-  filterButton.setAttribute("aria-label", `actuellement trié par ${typeOfSort} - changer de tri`);
-  filterButton.style.display = "block"
-  filterModal.style.display = "none";  
+  DOM.filterButton.innerHTML = `${typeOfSort} <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
+  DOM.filterButton.setAttribute("aria-label", `actuellement trié par ${typeOfSort} - changer de tri`);
+  DOM.filterButton.style.display = "block";
+  DOM.filterModal.style.display = "none";  
   likes()
   lightboxLink()
 }
 
-filterPopularity.addEventListener('click', function(event){
+DOM.filterPopularity.addEventListener('click', function(){
   filterPortfolio("Popularité")
 } );
-filterDate.addEventListener('click', function(event){
+DOM.filterDate.addEventListener('click', function(){
   filterPortfolio("Date")
 });
-filterTitle.addEventListener('click', function(event){
+DOM.filterTitle.addEventListener('click', function(){
   filterPortfolio("Titre")
 } );

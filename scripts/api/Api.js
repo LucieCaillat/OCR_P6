@@ -1,7 +1,7 @@
 const FISHEYE = {
 
 }
-
+/* eslint-disable no-unused-vars */ 
 async function getData() {
   const photographers = fetch("data/photographers.json")
       .then(function(res) {

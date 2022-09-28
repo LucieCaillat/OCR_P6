@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
 
@@ -38,4 +39,4 @@ function photographerFactory(data) {
     }
 
     return { name, portrait, city, country, tagline, price, id, getUserCardDOM, getPhotographerHeaderDOM };
-};
+}

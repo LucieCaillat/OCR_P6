@@ -1,8 +1,10 @@
+/* global FISHEYE*/
+
 function displayTotalLikes(){
   const nbrTotalLikes = FISHEYE.portfolio.map(media => media.likes).reduce((a,b)=> a + b);
   const totalLikes = document.querySelector(".total_likes");
   totalLikes.innerHTML = `${nbrTotalLikes} <i class="fa-solid fa-heart"></i>`
-};
+}
 
 function displayMediumLike(id, likes, liked){
   const like = document.querySelector(`#like_${id}`);
@@ -14,6 +16,7 @@ function displayMediumLike(id, likes, liked){
   }
 }
 
+/* eslint-disable no-unused-vars */
 function likes(){
   FISHEYE.portfolio.forEach((medium)=> {
   document.querySelector(`#like_${medium.id}`)
@@ -25,7 +28,7 @@ function likes(){
       }else{
         medium.likes ++;
         medium.liked = true;
-      };
+      }
       displayMediumLike(medium.id, medium.likes, medium.liked);
       displayTotalLikes();      
     })
