@@ -115,10 +115,20 @@
     align-items: flex-start;    
     color: #911C1C;
 }
-.photo-gallery h2, .photo-gallery p {
+.photo-gallery h2, .photo-gallery button {
     margin: 0;
     font-size: 24px;    
 }
+.photo-gallery h2 a{
+    text-decoration: none;
+    color: #911C1C;
+}
+
+.photo-gallery button{
+    border: none;
+    background-color: white;
+}
+
 .photo-gallery .like{
     font-weight: 500;
     white-space: nowrap;    

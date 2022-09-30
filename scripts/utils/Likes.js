@@ -3,16 +3,19 @@
 function displayTotalLikes(){
   const nbrTotalLikes = FISHEYE.portfolio.map(media => media.likes).reduce((a,b)=> a + b);
   const totalLikes = document.querySelector(".total_likes");
-  totalLikes.innerHTML = `${nbrTotalLikes} <i class="fa-solid fa-heart"></i>`
+  totalLikes.innerHTML = `${nbrTotalLikes} <i class="fa-solid fa-heart" aria-hidden="true"></i>`
+  totalLikes.setAttribute("aria-label", `Ce photographe a ${nbrTotalLikes} likes`); 
 }
 
-function displayMediumLike(id, likes, liked){
+function displayMediumLike(id, likes, liked, title){
   const like = document.querySelector(`#like_${id}`);
-  like.innerHTML = `${likes} <i class="fa-solid fa-heart"></i>`;
+  like.innerHTML = `${likes} <i class="fa-solid fa-heart" aria-hidden="true"></i>`;
   if(liked){
     like.style.color = "#D3573C"
+    like.setAttribute("aria-label", `${title} est aimé par ${likes} personnes - enlever votre like"`);
   }else{
     like.style.color = "#901C1C"
+    like.setAttribute("aria-label", `${title} est aimé par ${likes} personnes - indiquer que vous aimez aussi"`);
   }
 }
 
@@ -29,7 +32,7 @@ function likes(){
         medium.likes ++;
         medium.liked = true;
       }
-      displayMediumLike(medium.id, medium.likes, medium.liked);
+      displayMediumLike(medium.id, medium.likes, medium.liked, medium.title);
       displayTotalLikes();      
     })
   })

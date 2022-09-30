@@ -31,8 +31,8 @@ function photographerFactory(data) {
         <button class="contact_button" onclick="openContactForm()">Contactez-moi</button>
         <img src="assets/photographers/${portrait}" alt="image de profil de ${name}">
         <div class = "fix-box">
-            <p class = "total_likes"> <i class="fa-solid fa-heart"></i></p>
-            <p class = "price">${price}€/jour</p>
+            <p class = "total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
+            <p class = "price" aria-label="Tarif du photographe : ${price}€ par jour">${price}€/jour</p>
         </div>`;
 
         return (photographHeader);
