@@ -1,11 +1,13 @@
 /* global displayModal, closeModal, DOM, MediaFactory, FISHEYE*/
 
 function openLightbox(){
-  displayModal(DOM.lightboxModal)
+  displayModal(DOM.lightboxModal);
+  DOM.closeLightboxButton.focus();
 }
 
 function closeLigthbox(){
-  closeModal(DOM.lightboxModal)
+  closeModal(DOM.lightboxModal);
+  DOM.filterButton.focus();
 }
 
 function displayMediumLightBox(medium){

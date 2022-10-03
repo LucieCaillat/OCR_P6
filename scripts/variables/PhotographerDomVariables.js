@@ -21,9 +21,9 @@ const DOM = {
 
 //lightbox Modal
   lightboxModal: document.querySelector("#lightbox_modal"),
-  closeLightboxButton: document.querySelector("#lightbox_modal .fa-xmark"),
-  rightButton: document.querySelector("#lightbox_modal .fa-chevron-right"),
-  leftButton: document.querySelector("#lightbox_modal .fa-chevron-left"),
+  closeLightboxButton: document.querySelector("#close-lightbox-button"),
+  rightButton: document.querySelector("#right-button"),
+  leftButton: document.querySelector("#left-button"),
 
 //Contact Modal
   contactModal: document.getElementById("contact_modal"),

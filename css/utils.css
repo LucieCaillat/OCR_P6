@@ -2,3 +2,7 @@
   height: 100vh;
   overflow: hidden;
 }
+.hidden-button{
+  border: none;
+  background-color: white;
+}

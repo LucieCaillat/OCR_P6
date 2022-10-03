@@ -124,11 +124,6 @@
     color: #911C1C;
 }
 
-.photo-gallery button{
-    border: none;
-    background-color: white;
-}
-
 .photo-gallery .like{
     font-weight: 500;
     white-space: nowrap;    
@@ -252,13 +247,13 @@ z-index: 2;
     color: #911C1C;
     cursor: pointer;
 }
-#lightbox_modal .fa-xmark{
+#lightbox_modal #close-lightbox-button{
     position: fixed;
     top: 0;
     right: 0;
     margin-right: 100px;
     margin-top: 25px;
 }
-.fa-chevron-left, .fa-chevron-right{
+#left-button, #right-button{
     margin: 30px;
 }

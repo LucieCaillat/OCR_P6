@@ -18,7 +18,7 @@ function mediumTemplate(medium){
   ${displayMedium}
     <div class = "subtitle">
       <h2><a href = "#" aria-label="${medium.title} - ouvrire ce média en pleine écrant">${medium.title}</a></h2>
-      <button id = "like_${medium.id}" class = "like" aria-label="${medium.title} est aimé par ${medium.likes} personnes - indiquer que vous aimez aussi">${medium.likes} <i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+      <button id = "like_${medium.id}" class = "like hidden-button" aria-label="${medium.title} est aimé par ${medium.likes} personnes - indiquer que vous aimez aussi">${medium.likes} <i class="fa-solid fa-heart" aria-hidden="true"></i></button>
     </div>`;
   return article
 }
