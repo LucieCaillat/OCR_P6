@@ -17,7 +17,13 @@ function closeModal(modal) {
 /* eslint-disable no-unused-vars */
 function openContactForm() {
     displayModal(DOM.contactModal);
-    DOM.firstInput.focus();
+    DOM.closeContactModalButton.focus();
+}
+
+function closeContactForm(){
+    closeModal(DOM.contactModal);
+    const openContactButton = document.querySelector("#open-form-button");
+    openContactButton.focus(); 
 }
 
 /* eslint-disable no-unused-vars */
@@ -36,7 +42,7 @@ function contactForm (){
         console.log(`Adresse email:  ${email}`);
         console.log(`Message : ${message}`);
         console.log("/////////////////////////////////")
-        closeModal(DOM.contactModal);
+        closeContactForm();
         DOM.form.reset();
     })  
 }

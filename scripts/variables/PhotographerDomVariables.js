@@ -2,10 +2,6 @@
 const DOM = {
 // Header and Main
   withoutModals: document.querySelector("#without-modals"),
-// Header
-  header: document.querySelector("header"),
-// Main
-  main: document.querySelector("main"),
 // Filter
   filterButton: document.querySelector(".filter_button"),
 
@@ -27,7 +23,7 @@ const DOM = {
 
 //Contact Modal
   contactModal: document.getElementById("contact_modal"),
+  closeContactModalButton : document.getElementById("close-contact-modal-button"),
   titleContactModal: document.getElementById("title-contact-modal"),
-  firstInput: document.querySelector("input"),
   form: document.querySelector(".modal form")
 }

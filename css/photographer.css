@@ -160,13 +160,16 @@
 
 .modal header {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
     margin-bottom: 19px;
 }
 
-.modal header img {
+.modal header button {
+    background-color: #DB8876;
+    border: none;
     margin-top: 35px;
     cursor: pointer;
 }

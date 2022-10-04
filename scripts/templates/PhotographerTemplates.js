@@ -25,14 +25,14 @@ function photographerFactory(data) {
         photographHeader.innerHTML = 
         `<div>
             <h1>${name}</h2>
-            <p class = "location">${city}, ${country}</p>
-            <p class = "tagline">${tagline}</p>
+            <p class="location">${city}, ${country}</p>
+            <p class="tagline">${tagline}</p>
         </div>
-        <button class="contact_button" onclick="openContactForm()">Contactez-moi</button>
-        <img src="assets/photographers/${portrait}" alt="image de profil de ${name}">
-        <div class = "fix-box">
-            <p class = "total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
-            <p class = "price" aria-label="Tarif du photographe : ${price}€ par jour">${price}€/jour</p>
+        <button id="open-form-button" class="contact_button" onclick="openContactForm()">Contactez-moi</button>
+        <img src="assets/photographers/${portrait}" alt="${name}">
+        <div class="fix-box">
+            <p class="total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
+            <p class="price" aria-label="Tarif du photographe : ${price}€ par jour">${price}€/jour</p>
         </div>`;
 
         return (photographHeader);
