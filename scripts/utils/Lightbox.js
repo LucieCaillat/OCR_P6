@@ -85,7 +85,7 @@ function lightboxControl(){
     }
     // for Contact Form
     if (DOM.contactModal.getAttribute('aria-hidden') == 'false' && keyCode === 27) {
-      closeModal(DOM.contactModal);
+      closeContactForm();
     }
   })
 }
