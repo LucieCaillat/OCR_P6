@@ -25,7 +25,7 @@ function displayPortfolio(media) {
     const mediumCardDOM = mediumTemplate(medium);
     photoGallery.appendChild(mediumCardDOM);
     /// indicates if the media is liked
-    displayMediumLike(medium.id, medium.likes, medium.liked)    
+    displayMediumLike(medium.id, medium.likes, medium.liked, medium.title)    
   });
 }
 

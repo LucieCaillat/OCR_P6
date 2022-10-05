@@ -7,11 +7,12 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
 
-        article.innerHTML = `<a href = "photographer.html?id=${id}"><img src="assets/photographers/${portrait}" alt="${name} - page du photographe"></a>
-        <h2><a href = "photographer.html?id=${id}" aria-label="${name} - page du photographe">${name}</a></h2>
-        <p class = "location">${city}, ${country}</p>
-        <p class = "tagline">${tagline}</p>
-        <p class = "price">${price}€/jour</p>`;
+        article.innerHTML = `
+        <h2><a href = "photographer.html?id=${id}" aria-label="${name} - page du photographe"><img src="assets/photographers/${portrait}" alt="">${name}</a></h2>
+        <p class="location">${city}, ${country}</p>
+        <p class="tagline">${tagline}</p>
+        <p class="price" aria-hidden="true">${price}€/jour</p>
+        <p class="visuallyhidden">Le tarif de ce photographe est de ${price}€ par jour</p>`;
 
         return (article);
     }
@@ -20,8 +21,6 @@ function photographerFactory(data) {
     function getPhotographerHeaderDOM() {
         const photographHeader = document.createElement( 'div' );
         photographHeader.classList.add("photograph-header"); 
-        
-
         photographHeader.innerHTML = 
         `<div>
             <h1>${name}</h2>
@@ -32,7 +31,8 @@ function photographerFactory(data) {
         <img src="assets/photographers/${portrait}" alt="${name}">
         <div class="fix-box">
             <p class="total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
-            <p class="price" aria-label="Tarif du photographe : ${price}€ par jour">${price}€/jour</p>
+            <p class="price" aria-hidden="true">${price}€/jour</p>
+            <p class="visuallyhidden">Le tarif de ce photographe est de ${price}€ par jour</p>
         </div>`;
 
         return (photographHeader);

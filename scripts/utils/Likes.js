@@ -3,8 +3,8 @@
 function displayTotalLikes(){
   const nbrTotalLikes = FISHEYE.portfolio.map(media => media.likes).reduce((a,b)=> a + b);
   const totalLikes = document.querySelector(".total_likes");
-  totalLikes.innerHTML = `${nbrTotalLikes} <i class="fa-solid fa-heart" aria-hidden="true"></i>`
-  totalLikes.setAttribute("aria-label", `Ce photographe a ${nbrTotalLikes} likes`); 
+  totalLikes.innerHTML = `
+  <span class="visuallyhidden"> Le nombre de likes de ce photographe est de</span>${nbrTotalLikes} <i class="fa-solid fa-heart" aria-hidden="true"></i>`
 }
 
 function displayMediumLike(id, likes, liked, title){
