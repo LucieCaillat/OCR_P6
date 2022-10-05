@@ -1,4 +1,4 @@
-/* global displayModal, closeModal, DOM, MediaFactory, FISHEYE*/
+/* global displayModal, closeModal, closeContactForm DOM, MediaFactory, FISHEYE*/
 
 function openLightbox(){
   displayModal(DOM.lightboxModal);
