@@ -11,8 +11,11 @@ function photographerFactory(data) {
         <h2><a href = "photographer.html?id=${id}" aria-label="${name} - page du photographe"><img src="assets/photographers/${portrait}" alt="">${name}</a></h2>
         <p class="location">${city}, ${country}</p>
         <p class="tagline">${tagline}</p>
-        <p class="price" aria-hidden="true">${price}€/jour</p>
-        <p class="visuallyhidden">Le tarif de ce photographe est de ${price}€ par jour</p>`;
+        <p class="price" >
+        <span aria-hidden="true">${price}€/jour</span>
+        <span class="visuallyhidden">Le tarif de ${name} est de ${price}€ par jour</span>
+        </p>
+        `;
 
         return (article);
     }
@@ -31,8 +34,10 @@ function photographerFactory(data) {
         <img src="assets/photographers/${portrait}" alt="${name}">
         <div class="fix-box">
             <p class="total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
-            <p class="price" aria-hidden="true">${price}€/jour</p>
-            <p class="visuallyhidden">Le tarif de ce photographe est de ${price}€ par jour</p>
+            <p class="price" >
+                <span aria-hidden="true">${price}€/jour</span>
+                <span class="visuallyhidden">Le tarif de ${name} est de ${price}€ par jour</span>
+            </p>
         </div>`;
 
         return (photographHeader);
