@@ -1,4 +1,4 @@
-/* global photographerFactory, mediumTemplate, displayMediumLike, FISHEYE, getData, displayTotalLikes, likes, lightbox, contactForm*/
+/* global photographerFactory,mediaFactory, displayMediumLike, FISHEYE, getData, displayTotalLikes, likes, lightbox, contactForm*/
 
 const photographerId = parseInt(new URL(document.location).searchParams.get(`id`)); 
 
@@ -22,7 +22,8 @@ function displayPhotographer(photographer) {
 function displayPortfolio(media) {
   const photoGallery = document.querySelector(".photo-gallery");
   media.forEach((medium) => {
-    const mediumCardDOM = mediumTemplate(medium);
+    const mediumModel = mediaFactory(medium)
+    const mediumCardDOM = mediumModel.getMediumCardDOM();
     photoGallery.appendChild(mediumCardDOM);
     /// indicates if the media is liked
     displayMediumLike(medium.id, medium.likes, medium.liked, medium.title)    

@@ -1,9 +1,27 @@
-/* global displayPicture, displayVideo*/
-/* eslint-disable no-unused-vars */ 
-function MediaFactory(medium) {
-    if(medium.video === undefined){
-      return displayPicture(medium)
+/* eslint-disable no-unused-vars */
+function mediaFactory(data) {
+  const { id, photographerId, title, image, video, likes, date, price} = data;
+  
+  function displayMedium() {
+    if(video === undefined){
+      return `<img src="assets/${photographerId}/${image}" alt="${title}">`
     }else {
-      return displayVideo(medium)
+      return `<video src="assets/${photographerId}/${video}" controls></video>`
     }
+  }    
+    
+  function getMediumCardDOM(){
+    const displayMedium = this.displayMedium();    
+    const article = document.createElement( 'article' );
+    article.id = `${id}`;
+    article.innerHTML =`
+    ${displayMedium}
+      <div class = "subtitle">
+        <h2><a href = "#" aria-label="${title} - ouvrire ce média en pleine écran">${title}</a></h2>
+        <button id = "like_${id}" class = "like hidden-button" aria-label="${title} est aimé par ${likes} personnes - indiquer que vous aimez aussi">${likes} <i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+      </div>`;
+    return article
+  }
+
+  return { id, photographerId, title, likes, date, price, displayMedium, getMediumCardDOM};
 }

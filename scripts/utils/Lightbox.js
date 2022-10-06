@@ -1,4 +1,4 @@
-/* global displayModal, closeModal, closeContactForm DOM, MediaFactory, FISHEYE*/
+/* global displayModal, closeModal, closeContactForm DOM, mediaFactory, FISHEYE*/
 
 function openLightbox(){
   displayModal(DOM.lightboxModal);
@@ -13,7 +13,8 @@ function closeLigthbox(){
 function displayMediumLightBox(medium){
   const lightboxMedium = document.querySelector(".lightbox__medium");
   lightboxMedium.innerHTML = "";
-  const displayMedium = MediaFactory(medium);
+  const mediumModel = mediaFactory(medium);
+  const displayMedium = mediumModel.displayMedium();
   lightboxMedium.innerHTML = `
     <div class="picture-frame"> 
     <div>
