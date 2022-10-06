@@ -245,7 +245,7 @@ z-index: 2;
     color: #911C1C;
     margin-top: 12px;
 }
-#lightbox_modal i{
+#lightbox_modal em{
     font-size: 48px;
     color: #911C1C;
     cursor: pointer;

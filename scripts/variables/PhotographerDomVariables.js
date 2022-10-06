@@ -6,7 +6,7 @@ const DOM = {
   filterButton: document.querySelector(".filter_button"),
 
   filterModal: document.querySelector(".filter_modal"),
-  closeFilterModal: document.querySelector(".filter_modal i"),
+  closeFilterModal: document.querySelector(".filter_modal em"),
 
   filterPopularity: document.querySelector("#popularity"),
   filterDate : document.querySelector("#date"),
