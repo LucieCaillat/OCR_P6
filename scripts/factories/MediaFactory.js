@@ -18,7 +18,10 @@ function mediaFactory(data) {
     ${displayMedium}
       <div class = "subtitle">
         <h2><a href = "#" aria-label="${title} - ouvrire ce média en pleine écran">${title}</a></h2>
-        <button id = "like_${id}" class = "like hidden-button" aria-label="${title} est aimé par ${likes} personnes - indiquer que vous aimez aussi">${likes} <i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+        <button id = "like_${id}" class = "like hidden-button" aria-label="${title} est aimé par ${likes} personnes - indiquer que vous aimez aussi">
+          ${likes}
+          <em class="fa-solid fa-heart" aria-hidden="true"></em>
+        </button>
       </div>`;
     return article
   }

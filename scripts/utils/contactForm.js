@@ -14,7 +14,6 @@ function closeModal(modal) {
     DOM.withoutModals.classList.remove("no-scroll");  
 }
 
-/* eslint-disable no-unused-vars */
 function openContactForm() {
     displayModal(DOM.contactModal);
     DOM.closeContactModalButton.focus();
@@ -45,4 +44,13 @@ function contactForm (){
         closeContactForm();
         DOM.form.reset();
     })  
+
+    const openFormButton = document.querySelector("#open-form-button");
+    openFormButton.addEventListener("click", function(){
+        openContactForm()
+    })
+
+    DOM.closeContactModalButton.addEventListener("click", function(){
+        closeContactForm()
+    })
 }

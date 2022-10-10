@@ -30,10 +30,10 @@ function photographerFactory(data) {
             <p class="location">${city}, ${country}</p>
             <p class="tagline">${tagline}</p>
         </div>
-        <button id="open-form-button" class="contact_button" onclick="openContactForm()">Contactez-moi</button>
+        <button id="open-form-button" class="contact_button">Contactez-moi</button>
         <img src="assets/photographers/${portrait}" alt="${name}">
         <div class="fix-box">
-            <p class="total_likes"> <i class="fa-solid fa-heart"  aria-hidden="true"></i></p>
+            <p class="total_likes"><em class="fa-solid fa-heart" aria-hidden="true"></em></p>
             <p class="price" >
                 <span aria-hidden="true">${price}€/jour</span>
                 <span class="visuallyhidden">Le tarif de ${name} est de ${price}€ par jour</span>

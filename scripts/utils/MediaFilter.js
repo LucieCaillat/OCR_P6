@@ -28,9 +28,8 @@ function sortFunction(datas, typeOfSort) {
 function filterPortfolio(typeOfSort) {
   DOM.photoGallery.innerHTML = "";
   FISHEYE.portfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
-  console.log(FISHEYE.portfolio);
   displayPortfolio(FISHEYE.portfolio);
-  DOM.filterButton.innerHTML = `${typeOfSort} <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
+  DOM.filterButton.innerHTML = `${typeOfSort}<em class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
   DOM.filterButton.setAttribute("aria-label", `actuellement trié par ${typeOfSort} - changer de tri`);
   DOM.filterButton.style.display = "block";
   DOM.filterModal.style.display = "none";  

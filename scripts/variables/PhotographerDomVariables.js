@@ -1,3 +1,4 @@
+// DOM is a global variable to store DOM elements
 /* eslint-disable no-unused-vars */
 const DOM = {
 // Header and Main

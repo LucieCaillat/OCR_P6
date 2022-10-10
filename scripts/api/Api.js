@@ -1,3 +1,4 @@
+// FISHEYE is a global variable to store the data
 const FISHEYE = {
 
 }
@@ -11,6 +12,9 @@ async function getData() {
         FISHEYE.photographers = value.photographers;
         FISHEYE.media = value.media;
           return value 
+      })
+      .catch(function(err) {
+        console.log("An error occurred :", err)
       });
   return photographers
 }
