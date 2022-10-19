@@ -80,7 +80,8 @@
     position: absolute; 
     left: 198px;  
     background: #911C1C;
-    border-radius: 5px;      
+    border-radius: 5px; 
+    z-index: 2;     
 }
 .filter_modal hr{
     color: #FFFFFF;

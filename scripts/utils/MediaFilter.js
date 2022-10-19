@@ -13,13 +13,23 @@ DOM.closeFilterModal.addEventListener('click', function(event){
   DOM.filterButton.focus();
 })
 
+function dateStamp(date){
+  const year = parseInt(date.slice(0,4)) 
+  const month = parseInt(date.slice(5,7)) 
+  const day = parseInt(date.slice(8,10))
+  const dateObj = new Date(year, month, day)
+  return dateObj
+}
+
 function sortFunction(datas, typeOfSort) {
   if (typeOfSort === "Popularité") {
-    return datas.sort((a, b) => b.likes - a.likes)
+    //sort from highest to lowest
+    return datas.sort((a, b) => a.likes < b.likes ? 1 : -1)
   } if (typeOfSort === "Date") {
-    return datas.sort((a, b) => b.date > a.date) 
+    return datas.sort((a, b) => dateStamp(a.date) < dateStamp(b.date) ? 1 : -1) 
   } if (typeOfSort === "Titre") {
-    return datas.sort((a, b) => b.title < a.title)
+    //sort by alphabetical order 
+    return datas.sort((a, b) => a.title > b.title ? 1 : -1)
   } else{
     return datas
   }
@@ -28,6 +38,7 @@ function sortFunction(datas, typeOfSort) {
 function filterPortfolio(typeOfSort) {
   DOM.photoGallery.innerHTML = "";
   FISHEYE.portfolio = sortFunction(FISHEYE.portfolio, typeOfSort);
+  console.log(FISHEYE.portfolio)
   displayPortfolio(FISHEYE.portfolio);
   DOM.filterButton.innerHTML = `${typeOfSort}<em class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
   DOM.filterButton.setAttribute("aria-label", `actuellement trié par ${typeOfSort} - changer de tri`);
